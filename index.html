@@ -31,7 +31,20 @@
     <h1 class="font-format">Venha explorar conosco!</h1>
     <p class="font-format" style="text-align: center; margin: 0px; width: 80%;">A natureza chama. Descubra cenários de tirar o fôlego, viva experiências inesquecíveis e supere seus limites com o nosso catálogo exclusivo de aventuras.</p>
     
-    
+    <div class="aventuras-container">
+        <h2 class="font-format">Nossas Aventuras</h2>
+        <div class="seccao-filtros">
+            <label for="filtro-dificuldade">Filtrar:</label>
+            <select id="filtro-dificuldade" class="dropdown-filtro">
+                <option value="todos">Todos os Níveis</option>
+                <option value="facil">Iniciante</option>
+                <option value="mediano">Intermediário</option>
+                <option value="dificil">Difícil</option>
+            </select>
+        </div>
+
+        <div id="grid-aventuras" class="grid-aventuras"></div>
+    </div>
 
     <script src="app.js"></script>
     <footer class="footer-container">
