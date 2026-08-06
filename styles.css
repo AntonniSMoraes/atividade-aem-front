@@ -72,10 +72,32 @@
     box-shadow: 0 0 5px rgba(0,0,0,0.2);
 }
 
+.grid-aventuras {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    justify-content: center;
+}
 
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+.card:hover {
+    transform: translateY(-5px);
+}
 
-
+.card-imagem {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
 
 .footer-container {
     display: flex;
