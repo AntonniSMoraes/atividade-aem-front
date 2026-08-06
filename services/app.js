@@ -27,6 +27,18 @@ setInterval(trocarImagem, 5000);
 
 //
 
+const toggleButton = document.getElementById("menu-toggle");
+const burguerIcon = document.getElementById("burguer-icon");
+const menuMobile = document.getElementById("menu-mobile");
+
+toggleButton.addEventListener("click", () => {
+  burguerIcon.classList.toggle("rotated");
+  menuMobile.classList.toggle("active");
+});
+
+
+//
+
 const dropdown = document.getElementById('filtro-dificuldade');
 const gridAventuras = document.getElementById('grid-aventuras');
 

@@ -149,8 +149,67 @@
     pointer-events: none;
 }
 
+.burguer-menu {
+    display: none;
+}
+
+.header-nav-mobile {
+    display: none;
+}
+
+@media (max-width: 400px) {
+    .font-format {
+        font-size: 1.4rem;
+    }
+}
+
 @media (max-width: 768px) {
     .hero-carousel {
         height: 400px;
     }
+
+    #login, .header-nav {
+        display: none;
+    }
+
+    .burguer-menu {
+        display: block;
+        background-color: none;
+        border: none;
+        width: 40px;
+        height: 40px;
+    }
+
+    #burguer-icon {
+        transition: transform 0.3s ease;
+    }
+
+    .rotated {
+        transform: rotate(90deg);
+    }
+
+    .header-nav-mobile {
+        display: none;
+        flex-direction: column;
+        background: #f0f0f0;
+        padding: 10px;
+        gap: 10px;
+        position: absolute;
+        top: 60px;
+        right: 35px;
+        z-index: 1000;
+        align-items: flex-end;
+        border-radius: 10px;
+
+        & a {
+            text-decoration: none;
+            color: #000;
+            font-size: 1.2rem;
+        }
+    }
+
+    .header-nav-mobile.active {
+        display: flex;
+    }
+
 }
