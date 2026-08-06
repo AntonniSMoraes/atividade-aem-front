@@ -39,3 +39,19 @@
     text-decoration: none;
     color: #393447;
 }
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+
+.footer-button {
+    border: none;
+    cursor: pointer;
+}
+
+.footer-button img {
+    width: 180px;
+}
