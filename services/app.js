@@ -1,26 +1,14 @@
 import { buscarAventurasDoAEM, carregarImagemAutenticada } from './api.js';
 import { ENV } from '../config.js';
 
-const cenarios = [
-    'res/cenarios/aventurasAquaticas.png',
-    'res/cenarios/escaladasCorajosas.png',
-    'res/cenarios/montanhasNevadas.png',
-    'res/cenarios/saltosRadicais.png',
-    'res/cenarios/trilhasFlorestais.png',
-];
-
+const imagensCenario = document.querySelectorAll('.imagem-cenario');
 let indexAtual = 0;
-const imagemElemento = document.getElementById('imagem-cenario');
 
 function trocarImagem() {
-    if (!imagemElemento) return;
-    imagemElemento.classList.add('fade-out');
-
-    setTimeout(() => {
-        indexAtual = (indexAtual + 1) % cenarios.length;
-        imagemElemento.src = cenarios[indexAtual];
-        imagemElemento.classList.remove('fade-out');
-    }, 1000); 
+    if (imagensCenario.length === 0) return;
+    imagensCenario[indexAtual].classList.remove('active');
+    indexAtual = (indexAtual + 1) % imagensCenario.length;
+    imagensCenario[indexAtual].classList.add('active');
 }
 
 setInterval(trocarImagem, 5000);
