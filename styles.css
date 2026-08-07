@@ -232,3 +232,44 @@
         font-size: 1.2rem;
     }
 }
+
+/* css do magazine */
+.seccao-magazine {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-top: 20px;
+}
+
+.grid-magazine {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 320px));
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    justify-content: center;
+    width: 100%;
+}
+
+.card-artigo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    background-color: #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-artigo:hover {
+    transform: translateY(-5px);
+}
+
+.card-artigo a {
+    text-decoration: none;
+    color: #000;
+}
+

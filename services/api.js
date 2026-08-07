@@ -19,6 +19,25 @@ export async function buscarAventurasDoAEM(endpointUrl) {
     }
 }
 
+export async function buscarMagazineDoAEM() {
+    try {
+        const response = await fetch(`${ENV.AEM_HOST}${ENV.ULTIMAS_JSON}`, {
+            method: 'GET',
+            headers: ENV.HEADERS,
+        });
+
+        if (!response.ok) {
+            throw new Error(`Status HTTP: ${response.status}`);
+        }
+        const json = await response.json();
+        return json;
+
+    } catch (error) {
+        console.error('Erro na requisição ao AEM:', error);
+        return null;
+    }
+}
+
 export async function carregarImagemAutenticada(caminhoImagem) {
     if (!caminhoImagem) return 'res/cenarios/aventurasAquaticas.png';
 

@@ -1,4 +1,4 @@
-import { buscarAventurasDoAEM, carregarImagemAutenticada } from './api.js';
+import { buscarAventurasDoAEM, carregarImagemAutenticada, buscarMagazineDoAEM } from './api.js';
 import { ENV } from '../config.js';
 
 const imagensCenario = document.querySelectorAll('.imagem-cenario');
@@ -94,3 +94,40 @@ if (dropdown) {
 }
 
 renderizarAventuras(`${ENV.AEM_HOST}${ENV.GRAPHQL_ENDPOINT}/allAventuras`);
+
+//
+
+const gridMagazine = document.getElementById('grid-magazine');
+
+export async function renderizarMagazine() {
+    if (!gridMagazine) return;
+
+    const dados = await buscarMagazineDoAEM();
+    gridMagazine.innerHTML = '';
+
+    if (dados && dados.artigos && dados.artigos.length > 0) {
+        
+        dados.artigos.forEach(artigo => {
+            const linkArtigo = `${ENV.AEM_HOST}${artigo.path}`;
+
+            const cardHTML = `
+                <article class="card-artigo">
+                    <div class="card-artigo-conteudo">
+                        <span class="tag-magazine">Revista WKND</span>
+                        <h3>${artigo.titulo}</h3>
+                        <a href="${linkArtigo}" target="_blank" rel="noopener noreferrer" class="btn-ler-artigo">
+                            Ler Artigo Completo &rarr;
+                        </a>
+                    </div>
+                </article>
+            `;
+
+            gridMagazine.innerHTML += cardHTML;
+        });
+
+    } else {
+        gridMagazine.innerHTML = '<p>Nenhum artigo encontrado na revista.</p>';
+    }
+}
+
+renderizarMagazine();
