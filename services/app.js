@@ -80,7 +80,6 @@ async function renderizarAventuras(url) {
 
 if (dropdown) {
     dropdown.addEventListener('change', function() {
-        console.log('Filtro selecionado:', dropdown.value);
         const nivelSelecionado = dropdown.value;
         let endpoint = '';
 

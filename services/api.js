@@ -11,7 +11,6 @@ export async function buscarAventurasDoAEM(endpointUrl) {
             throw new Error(`Status HTTP: ${response.status}`);
         }
         const json = await response.json();
-        console.log('Dados recebidos do AEM:', json);
         return json;
 
     } catch (error) {
